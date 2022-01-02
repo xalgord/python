@@ -1,10 +1,10 @@
 import turtle
 import ui
 
-def write(self,text, move=False, align=None, font=None):
+def write(self,text, move=True, align="center", font=None):
         text = str(text)
         w, h = ui.measure_string(text)
-        color = self._current_color
+        color = "self._current_color"
         pos = self._pos
         def _draw():
             ui.draw_string(text, (pos.x, pos.y - h, 0, 0),color=color)
@@ -14,8 +14,11 @@ def write(self,text, move=False, align=None, font=None):
         self.update_view()
 
 pen = turtle.Turtle()
-# I
+pen.color("#FFFFFF")
+turtle.Screen().bgcolor("#1C1C1C")
+
 def draw_i():
+	pen.speed(1)
 	pen.forward(50)
 	pen.backward(25)
 	pen.right(90)
@@ -85,6 +88,7 @@ def stickman(gender='m'):
 	pen.circle(20, 360)
 	#pen.write(" I")
 
+
 # start drawing
 pen.pensize(6)
 pen.speed(1)
@@ -105,7 +109,8 @@ pen.home()
 pen.down()
 
 # draw love
-love('yellow')
+love('#FFCC00')
+
 
 # U
 draw_u()
@@ -149,8 +154,15 @@ love('red')
 
 # message
 pen.up()
-pen.left(170)
-pen.forward(90)
-pen.write("Can You?", font=('Arial', 14, 'bold'))
+pen.left(142)
+pen.forward(65)
+pen.write("Can You?\n       💕", font=('Arial', 14, 'bold'), move=True, align="center")
+
+pen.home()
+pen.up()
+pen.right(90)
+pen.forward(300)
+pen.write("Programmed by xalgord\n", font=('Arial', 10, 'bold'), move=True, align="center")
+pen.hideturtle()
 
 pen.screen.exitonclick()  # shows the graphics untill we exit
