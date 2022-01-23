@@ -288,10 +288,10 @@ while not done:
                 "score: " + str(score), False, (255, 255, 255))
             screen.blit(textsurfaceScore, ((w/2)-80, (h/2)))
         elif brickWall.hasWin():  # player win
-            screen.blit(textsurfaceWin, ((w/2)-100, (h/2)-50))
+            screen.blit(textsurfaceWin, ((w/2)-110, (h/2)-90))
             textsurfaceScore = mgScore.render(
                 "score: " + str(score), False, (255, 255, 255))
-            screen.blit(textsurfaceScore, ((w/2)-80, (h/2)))
+            screen.blit(textsurfaceScore, ((w/2)-100, (h/2)))
 
     # --- Go ahead and update the screen with what we've drawn.
     pygame.display.flip()
