@@ -20,3 +20,6 @@ This game is written in Python3
 
 
 ![image](https://user-images.githubusercontent.com/48483027/150682558-306d1dbc-eeab-48e3-a718-4089113b14bd.png)
+
+![image](https://user-images.githubusercontent.com/48483027/150682756-587901f8-670a-4537-95ea-5f2b7bbae688.png)
+
