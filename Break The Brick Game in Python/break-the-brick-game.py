@@ -9,14 +9,13 @@ website: https://xalgord.in
 
 ###################################
 """
-
 import random
 from tkinter import CENTER
+import numpy
 # using pygame python GUI
 import pygame
 
 pygame.init()
-
 
 # Setting the width and height of the screen [width, height]
 screen = pygame.display.set_mode()
@@ -42,17 +41,12 @@ class Ball(object):
         return self.__yVel
 
     def draw(self):
-        """
-            draws the ball onto the screen.
-        """
+        # draws the ball onto the screen.
         pygame.draw.circle(screen, (255, 255, 255),
                            (self._xLoc, self._yLoc), self._radius)   # ball color
 
     def update(self, paddle, brickwall):
-        """
-            contains some collision detection.
-            and moves the ball at the screen.
-        """
+        # collision detection and moves the ball at the screen.
         self._xLoc += self.__xVel
         self._yLoc += self.__yVel
         # left screen wall bounce
@@ -84,10 +78,7 @@ class Ball(object):
 
         return False
 
-
-"""
-    class for representing a paddle
-"""
+# class for representing a paddle
 
 
 class Paddle(object):
@@ -102,25 +93,18 @@ class Paddle(object):
         self.__H = h
 
     def draw(self):
-        """
-            draws the paddle.
-        """
+        # draws the paddle.
         pygame.draw.rect(screen, (0, 255, 0), (self._xLoc, self._yLoc,
-                         self._width, self._height), 0, 10)   # base color
+                                               self._width, self._height), 0, 10)   # base color
 
     def update(self):
-        """
-            moves the paddle via mouse
-        """
+        # moves the paddle via mouse
         x, y = pygame.mouse.get_pos()
         if x >= 0 and x <= (self.__W - self._width):
             self._xLoc = x
 
 
-"""
-    simple Brick class.
-"""
-
+# simple Brick class.
 
 class Brick(pygame.sprite.Sprite):
     def __init__(self, screen, width, height, x, y):
@@ -135,30 +119,22 @@ class Brick(pygame.sprite.Sprite):
         self.__isInGroup = False
 
     def draw(self):
-        """
-            draws the brick
-        """
-        pygame.draw.rect(screen, (0, 255, 0), (self._xLoc,
-                         self._yLoc, self._width, self._height), 0)
+        # draws the brick
+        pygame.draw.rect(screen, (random.randint(100, 255), random.randint(50, 250), random.randint(50, 250)), (self._xLoc,
+                                                                                                                self._yLoc, self._width, self._height), 0)
 
     def add(self, group):
-        """
-            adds this brick to a given group.
-        """
+        # adds this brick to a given group.
         group.add(self)
         self.__isInGroup = True
 
     def remove(self, group):
-        """
-            removes this brick from the given group.
-        """
+        # removes this brick from the given group.
         group.remove(self)
         self.__isInGroup = False
 
     def alive(self):
-        """
-            returns true when this brick belongs to the brick wall else false.
-        """
+        # returns true when this brick belongs to the brick wall else false.
         return self.__isInGroup
 
     def collide(self, ball):
@@ -179,9 +155,8 @@ class Brick(pygame.sprite.Sprite):
         else:
             return False
 
+
 # brick wall class
-
-
 class BrickWall(pygame.sprite.Group):
     def __init__(self, screen, x, y, width, height):
         self.__screen = screen
@@ -201,9 +176,7 @@ class BrickWall(pygame.sprite.Group):
             X = x
 
     def add(self, brick):
-
         # adds a brick to this group
-
         self._bricks.append(brick)
 
     def remove(self, brick):
@@ -249,7 +222,7 @@ gameStatus = True  # game is still running
 
 score = 0  # score for the game.
 
-pygame.display.set_caption("Brick-game")
+pygame.display.set_caption("Break-The-Brick Game")
 
 # Loop until the user clicks the close button.
 done = False
@@ -322,9 +295,8 @@ while not done:
 
     # --- Go ahead and update the screen with what we've drawn.
     pygame.display.flip()
-
     # --- Limit to 120 frames per second
     clock.tick(120)
 
-# Close the window and quit.
 pygame.quit()
+# Close the window and quit.
