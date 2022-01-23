@@ -12,10 +12,11 @@ This game is written in Python3
 <br>###################################
 
 ## Screenshots:
-![image](https://user-images.githubusercontent.com/48483027/150678304-625b7812-804e-4da6-a1c7-9d8e0744786f.png)
-<br>
 
-![image](https://user-images.githubusercontent.com/48483027/150678306-ae6f0bfa-5fcd-453c-9f3c-ce80d8486eed.png)
-<br>
+![image](https://user-images.githubusercontent.com/48483027/150682538-075b2a27-206c-40c0-968d-8e47703c7438.png)
 
-![image](https://user-images.githubusercontent.com/48483027/150678316-d227e3a4-2449-4304-b082-958acbca1495.png)
+
+![image](https://user-images.githubusercontent.com/48483027/150682553-539f8e21-14eb-48a9-8556-768afccc8e50.png)
+
+
+![image](https://user-images.githubusercontent.com/48483027/150682558-306d1dbc-eeab-48e3-a718-4089113b14bd.png)
