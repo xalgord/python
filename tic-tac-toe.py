@@ -1,13 +1,19 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-                                                #   TIC-TAC-TOE AI  #
+"""
+###################################
+Developer: Xalgord (Krishna Kaushal)
+Youtube: https://youtube.com/xalgord
+github: https://github.com/xalgord
+Instagram: https://instagram.com/xalgord
+website: https://xalgord.in
+###################################
+"""
 
 from tkinter import *
 from tkinter import messagebox
 import random
 
 
-class TIC_TAC_TOE_AI:
+class TIC_TAC_TOE:
 
     def __init__(self, root):
 
@@ -41,15 +47,15 @@ class TIC_TAC_TOE_AI:
         self.decorating()
 
     def decorating(self):  # Basic Set-up
-        Label(self.make_canvas, text='Tic-Tac-Toe AI', bg='#141414',
-              fg='#00FF00', font=('Lato', 25, 'bold')).place(x=140,
+        Label(self.make_canvas, text='Tic-Tac-Toe', bg='#141414',
+              fg='#00FF00', font=('Lato', 25, 'bold')).place(x=155,
                 y=10)
         self.btn_1 = Button(
             self.make_canvas,
             text='',
-            font=('Arial', 15, 'bold', 'italic'),
-            width=12,
-            height=5,
+            font=('Arial', 28, 'bold'),
+            width=6,
+            height=2,
             bg='#262626',
             activebackground='#262626',
             bd=1,
@@ -60,109 +66,109 @@ class TIC_TAC_TOE_AI:
         self.btn_2 = Button(
             self.make_canvas,
             text='',
-            font=('Arial', 15, 'bold', 'italic'),
-            width=12,
-            height=5,
+            font=('Arial', 28, 'bold'),
+            width=6,
+            height=2,
             bg='#262626',
             activebackground='#262626',
             bd=1,
             command=lambda : self.__human_play(2),
             state=DISABLED,
             )
-        self.btn_2.place(x=170+10, y=100+20)
+        self.btn_2.place(x=170+5, y=100+20)
         self.btn_3 = Button(
             self.make_canvas,
             text='',
-            font=('Arial', 15, 'bold', 'italic'),
-            width=12,
-            height=5,
+            font=('Arial', 28, 'bold',),
+            width=6,
+            height=2,
             bg='#262626',
             activebackground='#262626',
             bd=1,
             command=lambda : self.__human_play(3),
             state=DISABLED,
             )
-        self.btn_3.place(x=320+10, y=100+20)
+        self.btn_3.place(x=320, y=100+20)
 
         self.btn_4 = Button(
             self.make_canvas,
             text='',
-            font=('Arial', 15, 'bold', 'italic'),
-            width=12,
-            height=5,
+            font=('Arial', 28, 'bold'),
+            width=6,
+            height=2,
             bg='#262626',
             activebackground='#262626',
             bd=1,
             command=lambda : self.__human_play(4),
             state=DISABLED,
             )
-        self.btn_4.place(x=20+10, y=230+20)
+        self.btn_4.place(x=20+10, y=230+8)
         self.btn_5 = Button(
             self.make_canvas,
             text='',
-            font=('Arial', 15, 'bold', 'italic'),
-            width=12,
-            height=5,
+            font=('Arial', 28, 'bold'),
+            width=6,
+            height=2,
             bg='#262626',
             activebackground='#262626',
             bd=1,
             command=lambda : self.__human_play(5),
             state=DISABLED,
             )
-        self.btn_5.place(x=170+10, y=230+20)
+        self.btn_5.place(x=170+5, y=230+8)
         self.btn_6 = Button(
             self.make_canvas,
             text='',
-            font=('Arial', 15, 'bold', 'italic'),
-            width=12,
-            height=5,
+            font=('Arial', 28, 'bold'),
+            width=6,
+            height=2,
             bg='#262626',
             activebackground='#262626',
             bd=1,
             command=lambda : self.__human_play(6),
             state=DISABLED,
             )
-        self.btn_6.place(x=320+10, y=230+20)
+        self.btn_6.place(x=320, y=230+8)
 
         self.btn_7 = Button(
             self.make_canvas,
             text='',
-            font=('Arial', 15, 'bold', 'italic'),
-            width=12,
-            height=5,
+            font=('Arial', 28, 'bold'),
+            width=6,
+            height=2,
             bg='#262626',
             activebackground='#262626',
             bd=1,
             command=lambda : self.__human_play(7),
             state=DISABLED,
             )
-        self.btn_7.place(x=20+10, y=360+20)
+        self.btn_7.place(x=20+10, y=356)
         self.btn_8 = Button(
             self.make_canvas,
             text='',
-            font=('Arial', 15, 'bold', 'italic'),
-            width=12,
-            height=5,
+            font=('Arial', 28, 'bold'),
+            width=6,
+            height=2,
             bg='#262626',
             activebackground='#262626',
             bd=1,
             command=lambda : self.__human_play(8),
             state=DISABLED,
             )
-        self.btn_8.place(x=170+10, y=360+20)
+        self.btn_8.place(x=170+5, y=356)
         self.btn_9 = Button(
             self.make_canvas,
             text='',
-            font=('Arial', 15, 'bold', 'italic'),
-            width=12,
-            height=5,
+            font=('Arial', 28, 'bold'),
+            width=6,
+            height=2,
             bg='#262626',
             activebackground='#262626',
             bd=1,
             command=lambda : self.__human_play(9),
             state=DISABLED,
             )
-        self.btn_9.place(x=320+10, y=360+20)
+        self.btn_9.place(x=320, y=356)
 
         self.activate_btn = [
             self.btn_1,
@@ -200,7 +206,7 @@ class TIC_TAC_TOE_AI:
             bd=1,
             command=self.control_give,
             )
-        self.human_first_control.place(x=288, y=80)
+        self.human_first_control.place(x=272, y=80)
 
         self.reset_btn = Button(
             self.make_canvas,
@@ -216,7 +222,7 @@ class TIC_TAC_TOE_AI:
             command=self.reset,
             state=DISABLED,
             )
-        self.reset_btn.place(x=192, y=540)
+        self.reset_btn.place(x=184, y=520)
 
     def reset(self):  # Reset the game
         self.machine_cover.clear()
@@ -247,13 +253,13 @@ class TIC_TAC_TOE_AI:
         if indicator == 'machine_first':
             self.__machine_play()
 
-    def __sign_insert(self, btn_indicator, sign_is='X'):  # Button sign Insert
-        if sign_is == 'X':
+    def __sign_insert(self, btn_indicator, sign_is='💔'):  # Button sign Insert
+        if sign_is == '💔':
             self.activate_btn[btn_indicator - 1].config(text=sign_is,
-                    state=DISABLED, disabledforeground='#00FF00')
+                    state=DISABLED, disabledforeground='red')
         else:
             self.activate_btn[btn_indicator - 1].config(text=sign_is,
-                    state=DISABLED, disabledforeground='yellow')
+                    state=DISABLED, disabledforeground='#00FF00')
         self.sign_store[btn_indicator] = sign_is
 
     def __machine_play(self):  # Machine Control
@@ -280,8 +286,8 @@ class TIC_TAC_TOE_AI:
             human_input = self.human_cover[len(self.human_cover) - 1]
             if human_input % 2 == 0:
                 self.technique = 1
-                self.activate_btn[5 - 1].config(text='X')
-                self.sign_store[5] = 'X'
+                self.activate_btn[5 - 1].config(text='💔')
+                self.sign_store[5] = '💔'
                 self.prob.append(1)
             elif human_input != 5:
 
@@ -410,11 +416,11 @@ class TIC_TAC_TOE_AI:
                         try:
                             try:
                                 if self.sign_store[self.prob[0] + 1] \
-                                    == 'O':
+                                    == '🙂':
                                     pass
                             except:
                                 if self.sign_store[self.prob[0] + 1
-                                        + 6] == 'O':
+                                        + 6] == '🙂':
                                     pass
                             value_take = self.prob[0] + 2
                             self.prob.clear()
@@ -433,7 +439,7 @@ class TIC_TAC_TOE_AI:
                 if self.machine_cover[0] - self.machine_cover[1] == 6:
                     try:
                         if self.sign_store[self.machine_cover[1] + 3] \
-                            == 'O':
+                            == '🙂':
                             self.prob.clear()
                             if 7 in self.sign_store.keys():
                                 value_predict = 1
@@ -450,7 +456,7 @@ class TIC_TAC_TOE_AI:
                 else:
                     try:
                         if self.sign_store[self.machine_cover[1] + 1] \
-                            == 'O':
+                            == '🙂':
                             self.prob.clear()
                             if 3 in self.sign_store.keys():
                                 value_predict = 1
@@ -795,7 +801,7 @@ class TIC_TAC_TOE_AI:
 
     def __human_play(self, chance):  # Human Control
         self.chance_counter += 1
-        self.__sign_insert(chance, 'O')
+        self.__sign_insert(chance, '🙂')
         self.human_cover.append(chance)
         if self.chance_counter == 9:
             self.human_line_match()
@@ -805,28 +811,28 @@ class TIC_TAC_TOE_AI:
     def machine_line_match(self):
         found = 0
         if self.activate_btn[1 - 1]['text'] == self.activate_btn[2
-                - 1]['text'] == self.activate_btn[3 - 1]['text'] == 'X':
+                - 1]['text'] == self.activate_btn[3 - 1]['text'] == '💔':
             found = 1
         elif self.activate_btn[4 - 1]['text'] == self.activate_btn[5
-                - 1]['text'] == self.activate_btn[6 - 1]['text'] == 'X':
+                - 1]['text'] == self.activate_btn[6 - 1]['text'] == '💔':
             found = 1
         elif self.activate_btn[7 - 1]['text'] == self.activate_btn[8
-                - 1]['text'] == self.activate_btn[9 - 1]['text'] == 'X':
+                - 1]['text'] == self.activate_btn[9 - 1]['text'] == '💔':
             found = 1
         elif self.activate_btn[1 - 1]['text'] == self.activate_btn[4
-                - 1]['text'] == self.activate_btn[7 - 1]['text'] == 'X':
+                - 1]['text'] == self.activate_btn[7 - 1]['text'] == '💔':
             found = 1
         elif self.activate_btn[2 - 1]['text'] == self.activate_btn[5
-                - 1]['text'] == self.activate_btn[8 - 1]['text'] == 'X':
+                - 1]['text'] == self.activate_btn[8 - 1]['text'] == '💔':
             found = 1
         elif self.activate_btn[3 - 1]['text'] == self.activate_btn[6
-                - 1]['text'] == self.activate_btn[9 - 1]['text'] == 'X':
+                - 1]['text'] == self.activate_btn[9 - 1]['text'] == '💔':
             found = 1
         elif self.activate_btn[1 - 1]['text'] == self.activate_btn[5
-                - 1]['text'] == self.activate_btn[9 - 1]['text'] == 'X':
+                - 1]['text'] == self.activate_btn[9 - 1]['text'] == '💔':
             found = 1
         elif self.activate_btn[3 - 1]['text'] == self.activate_btn[5
-                - 1]['text'] == self.activate_btn[7 - 1]['text'] == 'X':
+                - 1]['text'] == self.activate_btn[7 - 1]['text'] == '💔':
             found = 1
         if found == 1:
             messagebox.showinfo('Game Over', 'Computer is winner')
@@ -838,28 +844,28 @@ class TIC_TAC_TOE_AI:
     def human_line_match(self):
         found = 0
         if self.activate_btn[1 - 1]['text'] == self.activate_btn[2
-                - 1]['text'] == self.activate_btn[3 - 1]['text'] == 'O':
+                - 1]['text'] == self.activate_btn[3 - 1]['text'] == '🙂':
             found = 1
         elif self.activate_btn[4 - 1]['text'] == self.activate_btn[5
-                - 1]['text'] == self.activate_btn[6 - 1]['text'] == 'O':
+                - 1]['text'] == self.activate_btn[6 - 1]['text'] == '🙂':
             found = 1
         elif self.activate_btn[7 - 1]['text'] == self.activate_btn[8
-                - 1]['text'] == self.activate_btn[9 - 1]['text'] == 'O':
+                - 1]['text'] == self.activate_btn[9 - 1]['text'] == '🙂':
             found = 1
         elif self.activate_btn[1 - 1]['text'] == self.activate_btn[4
-                - 1]['text'] == self.activate_btn[7 - 1]['text'] == 'O':
+                - 1]['text'] == self.activate_btn[7 - 1]['text'] == '🙂':
             found = 1
         elif self.activate_btn[2 - 1]['text'] == self.activate_btn[5
-                - 1]['text'] == self.activate_btn[8 - 1]['text'] == 'O':
+                - 1]['text'] == self.activate_btn[8 - 1]['text'] == '🙂':
             found = 1
         elif self.activate_btn[3 - 1]['text'] == self.activate_btn[6
-                - 1]['text'] == self.activate_btn[9 - 1]['text'] == 'O':
+                - 1]['text'] == self.activate_btn[9 - 1]['text'] == '🙂':
             found = 1
         elif self.activate_btn[1 - 1]['text'] == self.activate_btn[5
-                - 1]['text'] == self.activate_btn[9 - 1]['text'] == 'O':
+                - 1]['text'] == self.activate_btn[9 - 1]['text'] == '🙂':
             found = 1
         elif self.activate_btn[3 - 1]['text'] == self.activate_btn[5
-                - 1]['text'] == self.activate_btn[7 - 1]['text'] == 'O':
+                - 1]['text'] == self.activate_btn[7 - 1]['text'] == '🙂':
             found = 1
         if found == 1:
             messagebox.showinfo('Game Over', 'You are winner')
@@ -871,15 +877,13 @@ class TIC_TAC_TOE_AI:
             return 0
         else:
             return 1
-        
-
 
 if __name__ == '__main__':
     window = Tk()
-    window.title('AI Tic-Tac-Toe')
+    window.title('Tic-Tac-Toe')
     window.config(bg='#141414')
-    window.geometry('510x600')
-    window.maxsize(510, 600)
-    window.minsize(510, 600)
-    TIC_TAC_TOE_AI(window)
+    window.geometry('495x590')
+    window.maxsize(495, 590)
+    window.minsize(495, 590)
+    TIC_TAC_TOE(window)
     window.mainloop()
