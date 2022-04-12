@@ -14,7 +14,7 @@ total_soft_num = 0
 total_baklawa_num = 0
 i = 0
 print("\n******************** Welcome To Pizza Plaza ********************\n")
-print("################################################################\n")
+print("#################################################################\n")
 print("1. 1 Large Pizza = $12")
 print("2. 2 Large Pizzas = $22")
 print("3. Enter Number of Large pizzas manually (one garlic bread free for every 3 pizzas)")
@@ -23,7 +23,7 @@ print("5. 2 Large Pasta = $15")
 print("6. Enter Number of Large Pastas Manually (one 1.25 litre soft drink free for every 3 pastas)")
 print("7. 3 pizzas AND 3 pastas (get a small box of baklawa in addition to garlic bread and soft drinks)")
 print("8. Return to Main Menu\n")
-print("################################################################\n")
+print("#################################################################\n")
 while i <= 2:
     try:
         num = int(input("Choose a Number: "))
