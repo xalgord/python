@@ -4,7 +4,7 @@ import math
 kachhua = turtle.Turtle()
 
 wn = turtle.Screen()
-wn.bgcolor("#242348")
+wn.bgcolor("#000042")
 
 
 def func1(x, y):
@@ -43,9 +43,9 @@ def func3(r, color):
 
 
 if __name__ == '__main__':
-    func2(288, 'crimson')
-    func2(234, 'snow')
-    func2(174, 'crimson')
-    func2(114, '#39386E')
-    func3(114, 'snow')
+    func2(288, '#AA1428')
+    func2(234, '#FFFFFF')
+    func2(174, '#AA1428')
+    func2(114, '#000042')
+    func3(114, '#FFFFFF')
     turtle.done()
