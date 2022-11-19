@@ -1,50 +1,51 @@
 import turtle
 import math
 
-t = turtle.Turtle()
+kachhua = turtle.Turtle()
 
-wn=turtle.Screen() 
+wn = turtle.Screen()
 wn.bgcolor("#242348")
 
-def ankur(x, y):
-    t.penup()
-    t.goto(x, y)
-    t.pendown()
-    t.setheading(0)
-    t.pensize(2)
-    t.speed(10)
+
+def func1(x, y):
+    kachhua.penup()
+    kachhua.goto(x, y)
+    kachhua.pendown()
+    kachhua.setheading(0)
+    kachhua.pensize(2)
+    kachhua.speed(10)
 
 
-def golo(r, color):
+def func2(r, color):
     x_point = 0
     y_pont = -r
-    ankur(x_point, y_pont)
-    t.pencolor(color)
-    t.fillcolor(color)
-    t.begin_fill()
-    t.circle(r)
-    t.end_fill()
+    func1(x_point, y_pont)
+    kachhua.pencolor(color)
+    kachhua.fillcolor(color)
+    kachhua.begin_fill()
+    kachhua.circle(r)
+    kachhua.end_fill()
 
 
-def paanch(r, color):
-    ankur(0, 0)
-    t.pencolor(color)
-    t.setheading(162)
-    t.forward(r)
-    t.setheading(0)
-    t.fillcolor(color)
-    t.begin_fill()
+def func3(r, color):
+    func1(0, 0)
+    kachhua.pencolor(color)
+    kachhua.setheading(162)
+    kachhua.forward(r)
+    kachhua.setheading(0)
+    kachhua.fillcolor(color)
+    kachhua.begin_fill()
     for i in range(5):
-        t.forward(math.cos(math.radians(18)) * 2 * r)  # 2cos18°*r
-        t.right(144)
-    t.end_fill()
-    t.hideturtle()
+        kachhua.forward(math.cos(math.radians(18)) * 2 * r)  # 2cos18°*r
+        kachhua.right(144)
+    kachhua.end_fill()
+    kachhua.hideturtle()
 
 
 if __name__ == '__main__':
-    golo(288, 'crimson')
-    golo(234, 'snow')
-    golo(174, 'crimson')
-    golo(114, '#39386E')
-    paanch(114, 'snow')
+    func2(288, 'crimson')
+    func2(234, 'snow')
+    func2(174, 'crimson')
+    func2(114, '#39386E')
+    func3(114, 'snow')
     turtle.done()
